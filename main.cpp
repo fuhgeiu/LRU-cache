@@ -3,16 +3,15 @@
 
 int main() {
 
-    LRUCache cache(2);
-    cache.put(1, 100);
-    cache.put(2, 200);
-    std::cout << cache.get(1) << std::endl;
-    cache.put(3, 300);
-    std::cout << cache.get(2) << std::endl;
-    cache.put(4, 400);
-    std::cout << cache.get(1) << std::endl;
-    std::cout << cache.get(3) << std::endl;
-    std::cout << cache.get(4) << std::endl;
+    LRUCache<std::string, std::string> cache(2);
 
-    return 0;
+    cache.put("a", "apple");
+    cache.put("b", "banana");
+
+    std::cout << cache.get("a") << std::endl;
+
+    cache.put("c", "cherry");
+
+    std::cout << cache.get("b") << std::endl;
+    std::cout << cache.get("c") << std::endl;
 }
